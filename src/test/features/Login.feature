@@ -13,3 +13,11 @@ Feature: Write a test suite for PACKLINK ES (http://www.packlink.es) login page 
     And I type pQA2015! in passwordTextBox
     When I click on Login button
     Then I check that Hola CTestQA2015 is un textAccount
+
+  Scenario: Wrong Password
+    Given I go to init page
+    And I click on Login/Register button
+    And I type ctestqa2015@packlink.com in emailTextBox
+    And I type wrongPassword in passwordTextBox
+    When I click on Login button
+    Then I check that El email o la contraseña no son correctos. is un messageText

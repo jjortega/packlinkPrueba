@@ -21,3 +21,10 @@ Feature: Write a test suite for PACKLINK ES (http://www.packlink.es) login page 
     And I type wrongPassword in passwordTextBox
     When I click on Login button
     Then I check that El email o la contraseña no son correctos. is un messageText
+
+  Scenario: Void textBoxes the color shoul be red
+    Given I go to init page
+    And I click on Login/Register button
+    When I click on Login button
+    Then I check that the color of emailTextBox is red
+    And I check that the color of passwordTextBox is red

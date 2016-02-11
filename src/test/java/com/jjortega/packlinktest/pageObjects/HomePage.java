@@ -58,5 +58,12 @@ public class HomePage extends BasePage {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		assertTrue(wait.until(ExpectedConditions.textToBePresentInElement(messageText, expectedText)));
 	}
+	
+	public void checkColorOnEmailBox(String color) {
+		assertEquals(color,emailTextBox.getCssValue("background-color"));
+	}
 
+	public void checkColorOnPasswordBox(String color) {
+		assertEquals(color,passwordBox.getCssValue("background-color"));
+	}
 }

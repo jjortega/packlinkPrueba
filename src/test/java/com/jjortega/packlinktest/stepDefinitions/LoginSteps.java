@@ -57,4 +57,14 @@ public class LoginSteps {
 	public void i_check_that_text_is_un_messageText(String text) {
 		page.checkTextOfMessageText(text);
 	}
+	
+	@Then("^I check that the color of emailTextBox is red$")
+	public void i_check_that_the_color_of_emailTextBox_is_red() {
+		page.checkColorOnEmailBox("rgba(255, 170, 170, 1)");
+	}
+
+	@Then("^I check that the color of passwordTextBox is red$")
+	public void i_check_that_the_color_of_passwordTextBox_is_red() {
+		page.checkColorOnPasswordBox("rgba(255, 170, 170, 1)");
+	}
 }

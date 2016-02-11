@@ -1,9 +1,13 @@
 package com.jjortega.packlinktest.pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
 	
@@ -51,7 +55,8 @@ public class HomePage extends BasePage {
 	}
 	
 	public void checkTextOfMessageText(String expectedText) {
-		assertEquals(expectedText, messageText.getText());
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		assertTrue(wait.until(ExpectedConditions.textToBePresentInElement(messageText, expectedText)));
 	}
 
 }

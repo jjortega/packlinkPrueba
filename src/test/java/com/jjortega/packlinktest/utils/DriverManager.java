@@ -15,6 +15,7 @@ public class DriverManager {
 	
 	public WebDriver useFireFoxDriver() {
 		this.driver = new FirefoxDriver();	
+		driver.manage().window().maximize();
 		return driver;
 	}
 	

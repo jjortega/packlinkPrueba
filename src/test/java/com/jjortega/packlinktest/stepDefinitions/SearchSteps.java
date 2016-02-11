@@ -41,4 +41,9 @@ public class SearchSteps {
 		page.clickOnSearchButton();
 	}
 	
+	@Then("^I check the important message is (.*)$")
+	public void i_check_the_important_message_is(String expectedMessage) {
+		page.checkImportantMessage(expectedMessage);
+	}
+	
 }

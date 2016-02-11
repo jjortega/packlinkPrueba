@@ -39,6 +39,9 @@ public class SearchSection extends BasePage {
 	@FindBy(how=How.CSS, using=".botonFacturaTexto")
 	private WebElement searchButton;
 
+	@FindBy(how=How.CSS, using=".jqimessage")
+	private WebElement importantMessage;
+
 	public SearchSection(WebDriver driver) {
 		super(driver);
 	}
@@ -100,8 +103,11 @@ public class SearchSection extends BasePage {
 	}
 	
 	public void clickOnSearchButton() {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", searchButton);
 		searchButton.click();
+	}
+	
+	public void checkImportantMessage(String expectedMessage) {
+		assertEquals(expectedMessage, importantMessage.getText());
 	}
 
 }

@@ -1,3 +1,4 @@
+@Login
 Feature: Write a test suite for PACKLINK ES (http://www.packlink.es) login page with the following requirements:
   
   We will not provide any details about the implementation of the login functionality. 
